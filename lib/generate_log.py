@@ -2,8 +2,6 @@ from datetime import datetime
 import os
 
 def generate_log(data):
-    # TODO: Implement log generation logic
-
     # STEP 1: Validate input
     # Hint: Check if data is a list
     if not isinstance(data, list):
@@ -11,8 +9,8 @@ def generate_log(data):
 
     # STEP 2: Generate a filename with today's date (e.g., "log_20250408.txt")
     # Hint: Use datetime.now().strftime("%Y%m%d")
-    data_str = datetime.now().strftime("%Y%m%d")
-    filename = f"log_{data_str}.txt"
+    date_str = datetime.now().strftime("%Y%m%d")
+    filename = f"log_{date_str}.txt"
 
     # STEP 3: Write the log entries to a file using File I/O
     # Use a with open() block and write each line from the data list
@@ -22,7 +20,6 @@ def generate_log(data):
             file.write(f"{entry}\n")
 
     # STEP 4: Print a confirmation message with the filename
-    print(f"Success:Log file created with filename {filename}")
-
-    return filename
+    print(f"Success: Log file created with filename {filename}")
     
+    return filename
